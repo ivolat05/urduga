@@ -156,4 +156,49 @@ menu();
 };
 submenu();
 
+	const swipSwiper = () => {
+	const swipWrapp = document.querySelector(".swip-swiper");
+
+	const swipPaginationRow = document.querySelector(
+		".swip__swiper-pagination"
+	);
+	const swipInstal = {
+		loop: true,
+		slidesPerView: 1,
+		spaceBetween: 10,
+		pagination: {
+			el: ".swip__swiper-pagination",
+			type: "bullets",
+		},
+	};
+	if (swipWrapp) {
+		const swiperSwip = new Swiper(swipWrapp, swipInstal);
+		const btnSwip = document.querySelectorAll(".swip__btn");
+		const swipPagination = document.querySelectorAll(".swip__pagination");
+		btnSwip.forEach((btn) => {
+			btn.addEventListener("click", () => {
+				if (btn.classList.contains("swip__btn-prev")) {
+					swiperSwip.slidePrev();
+				} else {
+					swiperSwip.slideNext();
+				}
+			});
+		});
+
+		visiblePaginatin(swipPagination, swipPaginationRow);
+
+		swiperSwip.on("slideChange", () => {
+			visiblePaginatin(swipPagination, swipPaginationRow);
+		});
+	}
+};
+
+swipSwiper();
+
+function visiblePaginatin(swipPagination, swipPaginationRow) {
+	swipPagination.forEach((html) => {
+		html.innerHTML = swipPaginationRow.innerHTML;
+	});
+}
+
 });
