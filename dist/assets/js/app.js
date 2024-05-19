@@ -201,4 +201,50 @@ function visiblePaginatin(swipPagination, swipPaginationRow) {
 	});
 }
 
+	const newsSwiper = () => {
+	const newsWrapp = document.querySelector(".news__swiper");
+
+	const swiperInstal = {
+		slidesPerView: 3,
+		spaceBetween: 25,
+		autoHeight: false,
+		autoplay: {
+			delay: 5000,
+		},
+		pagination: {
+			el: ".news__swiper-pagination",
+			type: "bullets",
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+				spaceBetween: 15,
+				autoHeight: true,
+			},
+
+			572: {
+				slidesPerView: 2,
+				spaceBetween: 15,
+				autoHeight: false,
+			},
+
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 15,
+				autoHeight: false,
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 25,
+				autoHeight: false,
+			},
+		},
+	};
+	if (newsWrapp) {
+		const swiperNews = new Swiper(newsWrapp, swiperInstal);
+	}
+};
+
+newsSwiper();
+
 });
