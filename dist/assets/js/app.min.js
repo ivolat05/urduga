@@ -247,4 +247,26 @@ function visiblePaginatin(swipPagination, swipPaginationRow) {
 
 newsSwiper();
 
+	//fixed menu
+function fixedMenu() {
+	const header = document.querySelector(".header");
+	const main = document.querySelector("main");
+	if (header && main) {
+		const headerHeigth = header.offsetHeight;
+		const mainHeigth = main.offsetTop;
+		window.addEventListener("scroll", () => {
+			let scrollDistance = window.scrollY;
+
+			if (scrollDistance >= mainHeigth) {
+				header.classList.add("header-fixed");
+				main.style.marginTop = `${headerHeigth}px`;
+			} else {
+				header.classList.remove("header-fixed");
+				main.style.marginTop = null;
+			}
+		});
+	}
+}
+fixedMenu();
+
 });

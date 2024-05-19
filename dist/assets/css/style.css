@@ -1223,7 +1223,7 @@ main {
 
 .modal-background.--active {
   opacity: 1;
-  z-index: 15;
+  z-index: 999999;
 }
 .modal-background.--active .modal__container {
   -webkit-transform: translate(0);
@@ -2379,6 +2379,53 @@ main {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  -webkit-animation-name: show__header;
+          animation-name: show__header;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  z-index: 9999;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media (min-width: 992px) {
+  .header-fixed {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .header-fixed .header__top {
+    display: none;
+  }
+}
+
+@-webkit-keyframes show__header {
+  0% {
+    opacity: 0;
+    top: -80px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes show__header {
+  0% {
+    opacity: 0;
+    top: -80px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
   }
 }
 .main-padding {
