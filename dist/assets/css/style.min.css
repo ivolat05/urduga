@@ -1736,12 +1736,12 @@ main {
 }
 @media (hover: hover) {
   .modal__tell-modal:hover {
-    text-decoration: underline;
+    color: #DA0500;
   }
 }
 @media (hover: none) {
   .modal__tell-modal:active {
-    text-decoration: underline;
+    color: #DA0500;
   }
 }
 @media (max-width: 380px) {
@@ -1773,12 +1773,12 @@ main {
 }
 @media (hover: hover) {
   .header__top-tell:hover {
-    text-decoration: underline;
+    color: #DA0500;
   }
 }
 @media (hover: none) {
   .header__top-tell:active {
-    text-decoration: underline;
+    color: #DA0500;
   }
 }
 @media (max-width: 380px) {
@@ -1799,12 +1799,12 @@ main {
 }
 @media (hover: hover) {
   .header__top-email:hover {
-    text-decoration: underline;
+    color: #DA0500;
   }
 }
 @media (hover: none) {
   .header__top-email:active {
-    text-decoration: underline;
+    color: #DA0500;
   }
 }
 
@@ -1824,6 +1824,19 @@ main {
   font-size: 18px;
   line-height: 24px;
   color: #000;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+@media (hover: hover) {
+  .header__btn-call:hover {
+    color: #DA0500;
+  }
+}
+@media (hover: none) {
+  .header__btn-call:active {
+    color: #DA0500;
+  }
 }
 
 .header__top-list-inner {
